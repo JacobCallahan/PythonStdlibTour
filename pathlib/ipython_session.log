@@ -1,0 +1,125 @@
+   1: import pathlib
+   2: pwd = pathlib.Path.cwd()
+   3: pwd
+PosixPath('/home/jake/Programming/broker')
+   4: curr = pathlib.Path()
+   5: curr
+PosixPath('.')
+   6: pwd.parts
+('/', 'home', 'jake', 'Programming', 'broker')
+   7: curr.parts
+()
+   8: curr.absolute()
+PosixPath('/home/jake/Programming/broker')
+   9: curr.absolute().parts
+('/', 'home', 'jake', 'Programming', 'broker')
+  10: pwd.exists()
+True
+  11: pwd.is_dir()
+True
+  12: pwd.is_file()
+False
+  13: pwd
+PosixPath('/home/jake/Programming/broker')
+  14: pwd.parent
+PosixPath('/home/jake/Programming')
+  15: pwd.parent.parent
+PosixPath('/home/jake')
+  16: pwd.root
+'/'
+  17: pwd.drive
+''
+  18: up = pwd.parent
+  19: up
+PosixPath('/home/jake/Programming')
+  20: up < pwd
+True
+  21: up > pwd
+False
+  22: pathlib.Path("/usr") < pwd
+False
+  23: children = list(pwd.iterdir())
+  24: children
+[PosixPath('/home/jake/Programming/broker/.vscode'),
+ PosixPath('/home/jake/Programming/broker/.git'),
+ PosixPath('/home/jake/Programming/broker/broker'),
+ PosixPath('/home/jake/Programming/broker/broker.egg-info'),
+ PosixPath('/home/jake/Programming/broker/logs'),
+ PosixPath('/home/jake/Programming/broker/.github'),
+ PosixPath('/home/jake/Programming/broker/.pytest_cache'),
+ PosixPath('/home/jake/Programming/broker/tests'),
+ PosixPath('/home/jake/Programming/broker/Dockerfile'),
+ PosixPath('/home/jake/Programming/broker/LICENSE'),
+ PosixPath('/home/jake/Programming/broker/.gitignore'),
+ PosixPath('/home/jake/Programming/broker/broker_settings.yaml'),
+ PosixPath('/home/jake/Programming/broker/.ruff_cache'),
+ PosixPath('/home/jake/Programming/broker/.pre-commit-config.yaml'),
+ PosixPath('/home/jake/Programming/broker/README.md'),
+ PosixPath('/home/jake/Programming/broker/dist'),
+ PosixPath('/home/jake/Programming/broker/build'),
+ PosixPath('/home/jake/Programming/broker/inventory.yaml'),
+ PosixPath('/home/jake/Programming/broker/broker_settings.yaml.example'),
+ PosixPath('/home/jake/Programming/broker/catalog-info.yaml'),
+ PosixPath('/home/jake/Programming/broker/venvbroker'),
+ PosixPath('/home/jake/Programming/broker/pyproject.toml')]
+  25: child_files = [pth for pth in pwd.iterdir() if pth.is_file()]
+  26: child_files
+[PosixPath('/home/jake/Programming/broker/Dockerfile'),
+ PosixPath('/home/jake/Programming/broker/LICENSE'),
+ PosixPath('/home/jake/Programming/broker/.gitignore'),
+ PosixPath('/home/jake/Programming/broker/broker_settings.yaml'),
+ PosixPath('/home/jake/Programming/broker/.pre-commit-config.yaml'),
+ PosixPath('/home/jake/Programming/broker/README.md'),
+ PosixPath('/home/jake/Programming/broker/inventory.yaml'),
+ PosixPath('/home/jake/Programming/broker/broker_settings.yaml.example'),
+ PosixPath('/home/jake/Programming/broker/catalog-info.yaml'),
+ PosixPath('/home/jake/Programming/broker/pyproject.toml')]
+  27: child_dirs = [pth for pth in pwd.iterdir() if pth.is_dir()]
+  28: child_dirs
+[PosixPath('/home/jake/Programming/broker/.vscode'),
+ PosixPath('/home/jake/Programming/broker/.git'),
+ PosixPath('/home/jake/Programming/broker/broker'),
+ PosixPath('/home/jake/Programming/broker/broker.egg-info'),
+ PosixPath('/home/jake/Programming/broker/logs'),
+ PosixPath('/home/jake/Programming/broker/.github'),
+ PosixPath('/home/jake/Programming/broker/.pytest_cache'),
+ PosixPath('/home/jake/Programming/broker/tests'),
+ PosixPath('/home/jake/Programming/broker/.ruff_cache'),
+ PosixPath('/home/jake/Programming/broker/dist'),
+ PosixPath('/home/jake/Programming/broker/build'),
+ PosixPath('/home/jake/Programming/broker/venvbroker')]
+  29: yaml_files = list(pwd.glob("*.yaml"))
+  30: yaml_files
+[PosixPath('/home/jake/Programming/broker/broker_settings.yaml'),
+ PosixPath('/home/jake/Programming/broker/.pre-commit-config.yaml'),
+ PosixPath('/home/jake/Programming/broker/inventory.yaml'),
+ PosixPath('/home/jake/Programming/broker/catalog-info.yaml')]
+  31: new_path = pwd.joinpath("scripts", "test_script.py")
+  32: new_path
+PosixPath('/home/jake/Programming/broker/scripts/test_script.py')
+  33: new_path = pwd / "scripts" / "test_script.py"
+  34: new_path
+PosixPath('/home/jake/Programming/broker/scripts/test_script.py')
+  35: new_path.is_file()
+False
+  36: new_path.exists()
+False
+  37: new_path.name
+'test_script.py'
+  38: new_path.suffix
+'.py'
+  39: new_path.stem
+'test_script'
+  40: new_path = new_path.with_suffix(".sh")
+  41: new_path
+PosixPath('/home/jake/Programming/broker/scripts/test_script.sh')
+  42: new_path.parent.exists()
+False
+  43: new_path.parent.mkdir(parents=True, exist_ok=True)
+  44: new_path.parent.exists()
+True
+  45: new_path.touch()
+  46: new_path.exists()
+True
+  47: new_path.is_file()
+True
