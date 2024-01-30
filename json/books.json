@@ -1,0 +1,18 @@
+[
+    {
+        "type": "Book",
+        "data": {
+            "title": "Brave New World",
+            "author": "Aldous Huxley",
+            "year": 1931
+        }
+    },
+    {
+        "type": "Book",
+        "data": {
+            "title": "Jurassic Park",
+            "author": "Michael Crichton",
+            "year": 1990
+        }
+    }
+]
