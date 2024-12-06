@@ -4,16 +4,19 @@ import json
 import time
 import urllib.request
 
+
 def fib(n):
     if n <= 1:
         return n
     return fib(n - 1) + fib(n - 2)
+
 
 @cache
 def cached_fib(n):
     if n <= 1:
         return n
     return cached_fib(n - 1) + cached_fib(n - 2)
+
 
 def bench_fib():
     goal = 38
@@ -40,25 +43,25 @@ class METAR:
     def data(self):
         print(f"Getting METAR for {self.icao}")
         res = urllib.request.urlopen(
-            f'https://api.weather.gov/stations/{self.icao.upper()}/observations/latest'
+            f"https://api.weather.gov/stations/{self.icao.upper()}/observations/latest"
         ).read()
         return json.loads(res)
 
     @property
     def raw(self):
-        return self.data['properties']['rawMessage']
+        return self.data["properties"]["rawMessage"]
 
     @property
     def temp(self):
-        return self.data['properties']['temperature']['value']
+        return self.data["properties"]["temperature"]["value"]
 
     @property
     def dewpoint(self):
-        return self.data['properties']['dewpoint']['value']
+        return self.data["properties"]["dewpoint"]["value"]
 
     @property
     def wind(self):
         return "{direction}{speed}KT".format(
-            direction=self.data['properties']['windDirection']['value'],
-            speed=self.data['properties']['windSpeed']['value']
+            direction=self.data["properties"]["windDirection"]["value"],
+            speed=self.data["properties"]["windSpeed"]["value"],
         )

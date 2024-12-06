@@ -6,15 +6,18 @@ from functools import singledispatch, singledispatchmethod, total_ordering
 def handle_error(error):
     raise NotImplemented("Can't handle this error type.")
 
+
 @handle_error.register(TypeError)
 def _(error):
     print("Handling TypeError")
     print(error)
 
+
 @handle_error.register(ValueError)
 def _(error):
     print("Handling ValueError")
     print(error)
+
 
 @handle_error.register(ZeroDivisionError)
 def _(error):
@@ -43,6 +46,7 @@ class MyNum:
         for item in another:
             self.add_it(item)
 
+
 @total_ordering
 class BadInt:
     def __init__(self, value):
@@ -57,7 +61,6 @@ class BadInt:
         if isinstance(other, int | BadInt):
             return len(str(self.value)) < len(str(other))
         return NotImplemented
-
 
 
 if __name__ == "__main__":

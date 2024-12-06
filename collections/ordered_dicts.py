@@ -16,4 +16,3 @@ task_dict.move_to_end("Task 4", last=False)
 
 for task, status in task_dict.items():
     print(f"{task}: {status}")
-    

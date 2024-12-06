@@ -1,6 +1,7 @@
 """User* classes are a good way to create custom versions of their builtins"""
 from collections import UserDict
 
+
 class Box(UserDict):
     def __getattr__(self, key):
         # Allow attribute access for dictionary keys
@@ -11,7 +12,7 @@ class Box(UserDict):
 
     def __setattr__(self, key, value):
         # Allow setting attributes for dictionary keys
-        if key == 'data':
+        if key == "data":
             super().__setattr__(key, value)
         else:
             self.data[key] = value
@@ -23,9 +24,10 @@ class Box(UserDict):
         else:
             raise AttributeError(f"'Box' object has no attribute '{key}'")
 
+
 # Example usage
 # Define a dictionary for a Star Trek character
-character = Box({'name': 'Spock', 'species': 'Vulcan', 'rank': 'Commander'})
+character = Box({"name": "Spock", "species": "Vulcan", "rank": "Commander"})
 
 # Accessing entries using dotted attribute access
 print(character.name)  # Output: Spock
@@ -33,7 +35,7 @@ print(character.species)  # Output: Vulcan
 print(character.rank)  # Output: Commander
 
 # Modifying entries using dotted attribute access
-character.rank = 'Captain'
+character.rank = "Captain"
 print(character.rank)  # Output: Captain
 
 # Deleting entries using dotted attribute access

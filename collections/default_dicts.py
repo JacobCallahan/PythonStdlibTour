@@ -9,8 +9,10 @@ for word in word_list:
 
 print(counter)
 
+
 def infinite_dict():
     return defaultdict(infinite_dict)
+
 
 infidict = infinite_dict()
 infidict["first"]["second"]["third"]["fourth"] = 42

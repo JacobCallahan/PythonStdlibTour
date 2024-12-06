@@ -1,6 +1,7 @@
 """deques are a double-ended queue with fast appends and pops on either end"""
 from collections import deque
 
+
 def is_palindrome(word):
     """Return true if the given word is a palindrome"""
     dq = deque(word)
@@ -8,6 +9,7 @@ def is_palindrome(word):
         if dq.popleft() != dq.pop():
             return False
     return True
+
 
 word1 = "racecar"
 word2 = "alphabet"
