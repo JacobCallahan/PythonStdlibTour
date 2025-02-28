@@ -1,0 +1,51 @@
+2025-02-21 10:00:01 INFO Starting application v1.2.3
+2025-02-21 10:00:02 INFO Loading configuration from config.yaml
+2025-02-21 10:00:03 DEBUG Initializing database connection
+2025-02-21 10:00:04 INFO Database connection established
+2025-02-21 10:00:05 INFO Processing user requests
+2025-02-21 10:00:06 DEBUG Fetching data for user ID 12345
+2025-02-21 10:00:07 INFO Data retrieved successfully
+2025-02-21 10:00:08 INFO Processing batch job 001
+2025-02-21 10:00:09 WARNING High memory usage detected: 85%
+2025-02-21 10:00:10 DEBUG Batch job 001 completed
+2025-02-21 10:00:11 INFO Starting batch job 002
+2025-02-21 10:00:12 DEBUG Processing 500 records
+2025-02-21 10:00:13 ERROR Failed to process record ID 456: Null pointer exception
+2025-02-21 10:00:14 INFO Retrying record ID 456
+2025-02-21 10:00:15 DEBUG Retry attempt 1 of 3
+2025-02-21 10:00:16 INFO Retry succeeded
+2025-02-21 10:00:17 INFO Batch job 002 completed
+2025-02-21 10:00:18 INFO Starting batch job 003
+2025-02-21 10:00:19 DEBUG Fetching external API data
+2025-02-21 10:00:20 WARNING API response time: 2.5s
+2025-02-21 10:00:21 ERROR API request failed: Connection timeout
+2025-02-21 10:00:22 DEBUG Retrying API request
+2025-02-21 10:00:23 INFO API request succeeded on retry
+2025-02-21 10:00:24 INFO Processing batch job 004
+2025-02-21 10:00:25 DEBUG Validating input data
+2025-02-21 10:00:26 INFO Validation complete
+2025-02-21 10:00:27 WARNING Disk space running low: 10% remaining
+2025-02-21 10:00:28 INFO Starting batch job 005
+2025-02-21 10:00:29 DEBUG Processing 1000 records
+2025-02-21 10:00:30 ERROR Database query failed: Timeout exceeded
+2025-02-21 10:00:31 DEBUG Attempting to reconnect to database
+2025-02-21 10:00:32 INFO Database reconnected
+2025-02-21 10:00:33 INFO Retrying query
+2025-02-21 10:00:34 INFO Query succeeded
+2025-02-21 10:00:35 INFO Batch job 005 completed
+2025-02-21 10:00:36 INFO Starting shutdown sequence
+2025-02-21 10:00:37 DEBUG Closing database connection
+2025-02-21 10:00:38 INFO Database connection closed
+2025-02-21 10:00:39 INFO Saving logs to archive
+2025-02-21 10:00:40 DEBUG Compressing log files
+2025-02-21 10:00:41 INFO Compression complete
+2025-02-21 10:00:42 WARNING Slow shutdown detected: 3s elapsed
+2025-02-21 10:00:43 ERROR Failed to upload logs: Network error
+2025-02-21 10:00:44 DEBUG Retrying log upload
+2025-02-21 10:00:45 INFO Log upload succeeded on retry
+2025-02-21 10:00:46 INFO Cleaning up temporary files
+2025-02-21 10:00:47 DEBUG Removing temp directory
+2025-02-21 10:00:48 INFO Cleanup complete
+2025-02-21 10:00:49 INFO Application shutdown successful
+2025-02-21 10:00:50 INFO Total runtime: 49 seconds
+another log line
